@@ -7,10 +7,12 @@ app.get("/:nome/:lang",(req,res) => {
 
     var nome = req.params.nome
     var lang = req.params.lang
+    var exibirMsg = false
 
     res.render("index",{
         nome: nome,
-        lang: lang
+        lang: lang,
+        msg: exibirMsg
     }) // Renderizando a pagina index.ejs
     
 }) // Rota principal da aplicação
