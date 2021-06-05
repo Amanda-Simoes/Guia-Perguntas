@@ -9,10 +9,17 @@ app.get("/:nome/:lang",(req,res) => {
     var lang = req.params.lang
     var exibirMsg = false
 
+    var produtos = [
+        {nome: "Doritos", preco: 3.14},
+        {nome: "Coca-Cola", preco: 6.00},
+        {nome: "Leite", preco: 2.15}
+    ] // Array de Produto
+
     res.render("index",{
         nome: nome,
         lang: lang,
-        msg: exibirMsg
+        msg: exibirMsg,
+        produtos: produtos
     }) // Renderizando a pagina index.ejs
     
 }) // Rota principal da aplicação

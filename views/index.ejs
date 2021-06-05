@@ -20,11 +20,18 @@
     <p>Nome: <%= nome %> </p> 
     <p>Linguagem Favorita: <%= lang %> </p>
 
+    <!-- Condicionamento -->
     <% if(msg){ %>
         <h3>Isso é uma mensagem de erro!</h3>
     <% } else{ %>
         <h3>Nenhum erro!</h3>
     <% } %>
+
+    <!-- Estrutura de Repetição -->
+    <% produtos.forEach(function(produto){ %>
+        <p>Produto: <%= produto.nome %>
+        - Preço: <%= produto.preco %></p>
+    <% }) %>
 
 </body>
 </html>
