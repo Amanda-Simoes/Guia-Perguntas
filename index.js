@@ -4,26 +4,9 @@ const app = express()
 app.set('view engine','ejs') // Configurando o express para utilizar o EJS como view engine
 app.use(express.static('public'))
 
-app.get("/:nome/:lang",(req,res) => {
+app.get("/",(req,res) => {
 
-    var nome = req.params.nome
-    var lang = req.params.lang
-    var exibirMsg = false
-
-    var produtos = [
-        {nome: "Doritos", preco: 3.14},
-        {nome: "Coca-Cola", preco: 6.00},
-        {nome: "Leite", preco: 2.15},
-        {nome: "Energetico", preco: 7.00},
-        {nome: "Carne", preco: 20.00}
-    ] // Array de Produto
-
-    res.render("index",{
-        nome: nome,
-        lang: lang,
-        msg: exibirMsg,
-        produtos: produtos
-    }) // Renderizando a pagina index.ejs
+    res.render("index") // Renderizando a pagina index.ejs
     
 }) // Rota principal da aplicação
 
