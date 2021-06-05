@@ -1,8 +1,10 @@
 const express = require("express")
 const app = express()
 
+app.set('view engine','ejs') // Configurando o express para utilizar o EJS como view engine
+
 app.get("/",(req,res) => {
-    res.send("Bem vindo ao meu site!")
+    res.render("index") // Renderizando a pagina index.ejs
 }) // Rota principal da aplicação
 
 app.listen(4000,() => {
