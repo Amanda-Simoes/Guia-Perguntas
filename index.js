@@ -14,6 +14,10 @@ app.get("/perguntar",(req,res) => {
     res.render("perguntar")
 })
 
+app.post("/salvarpergunta",(req,res) => {
+    res.send("Formulario recebido")
+}) // Rota do tipo post é usado para receber dados de um formulario
+
 app.listen(4000,() => {
     console.log("App rodando!")
 })
