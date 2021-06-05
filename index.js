@@ -10,6 +10,10 @@ app.get("/",(req,res) => {
     
 }) // Rota principal da aplicação
 
+app.get("/perguntar",(req,res) => {
+    res.render("perguntar")
+})
+
 app.listen(4000,() => {
     console.log("App rodando!")
 })
