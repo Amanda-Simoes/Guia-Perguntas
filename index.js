@@ -3,10 +3,10 @@ const app = express()
 
 app.set('view engine','ejs') // Configurando o express para utilizar o EJS como view engine
 
-app.get("/",(req,res) => {
+app.get("/:nome/:lang",(req,res) => {
 
-    var nome = "Amanda"
-    var lang = "Java"
+    var nome = req.params.nome
+    var lang = req.params.lang
 
     res.render("index",{
         nome: nome,
