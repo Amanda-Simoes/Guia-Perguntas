@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const connection = require("./database/database") // Conexão com o banco MySQL
 const pergunta = require("./database/pergunta") // Importando o model pergunta
-const resposta = require("./database/resposta") // Importando o modelo resposta
+const resposta = require("./database/resposta")// Importando o modelo resposta
 
 // Database (MySQL)
 
@@ -59,9 +59,17 @@ app.get("/pergunta/:id",(req,res) => {
         where: {id: id}
     }).then(pergunta => {
         if(pergunta != undefined){ // A pergunta existe
-            res.render("pergunta",{
-                pergunta: pergunta
+
+            resposta.findAll({
+                where: {perguntaId: pergunta.id}, // Pegando respostas com o mesmo id da pergunta
+                order: [['id','DESC']]
+            }).then(respostas => {
+                res.render("pergunta",{
+                    pergunta: pergunta,
+                    respostas: respostas
+                })
             })
+
         }else{ // A pergunta não existe
             res.redirect("/")
         }
