@@ -1,0 +1,21 @@
+<!-- Importando o header -->
+<%- include("./partials/header.ejs") %> 
+
+<body>
+
+    <!-- Importando o navbar -->
+    <%- include("./partials/navbar.ejs") %> 
+    
+    <div class="container">
+
+        <br>
+        <h1><%= pergunta.titulo %></h1>
+        <hr>
+        <p><%= pergunta.descricao %></p>
+
+    </div>
+
+</body>
+
+<!-- Importando o footer -->
+<%- include("./partials/footer.ejs") %>

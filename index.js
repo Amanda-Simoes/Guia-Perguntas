@@ -51,6 +51,23 @@ app.post("/salvarpergunta",(req,res) => {
 
 }) // Rota do tipo post é usado para receber dados de um formulario
 
+app.get("/pergunta/:id",(req,res) => {
+
+    var id = req.params.id;
+    pergunta.findOne({
+        where: {id: id}
+    }).then(pergunta => {
+        if(pergunta != undefined){ // A pergunta existe
+            res.render("pergunta",{
+                pergunta: pergunta
+            })
+        }else{ // A pergunta não existe
+            res.redirect("/")
+        }
+    })
+
+})
+
 app.listen(4000,() => {
     console.log("App rodando!")
 })
