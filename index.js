@@ -69,6 +69,19 @@ app.get("/pergunta/:id",(req,res) => {
 
 })
 
+app.post("/responder",(req,res) => {
+
+    var corpo = req.body.corpo
+    var perguntaId = req.body.perguntaId
+    resposta.create({
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(() => {
+        res.redirect("/pergunta/"+perguntaId)
+    })
+
+})
+
 app.listen(4000,() => {
     console.log("App rodando!")
 })
