@@ -21,7 +21,13 @@ app.use(urlencoded({extended: false}))
 app.use(express.json())
 
 app.get("/",(req,res) => {
-    res.render("index") // Renderizando a pagina index.ejs
+
+    pergunta.findAll({ raw: true}).then(perguntas => {
+        res.render("index",{
+            perguntas: perguntas
+        })
+    })
+
   
 }) // Rota principal da aplicação
 
