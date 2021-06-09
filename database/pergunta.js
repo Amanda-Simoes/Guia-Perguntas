@@ -12,8 +12,6 @@ const Pergunta = connection.define('pergunta',{
     }
 }) // Model de Pergunta (Tabela Pergunta com os campos sendo titulo e descricao)
 
-Pergunta.sync({force: false}).then(() => {
-    console.log("Tabela criada")
-}) // Sincronizando com o banco de dados
+Pergunta.sync({force: false}) // Sincronizando com o banco de dados
 
 module.exports = Pergunta

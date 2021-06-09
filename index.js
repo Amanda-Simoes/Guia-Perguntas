@@ -2,7 +2,8 @@ const { urlencoded } = require("body-parser")
 const express = require("express")
 const app = express()
 const connection = require("./database/database") // Conexão com o banco MySQL
-const pergunta = require("./database/pergunta") // Importando o model
+const pergunta = require("./database/pergunta") // Importando o model pergunta
+const resposta = require("./database/resposta") // Importando o modelo resposta
 
 // Database (MySQL)
 
