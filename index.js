@@ -1,6 +1,16 @@
 const { urlencoded } = require("body-parser")
 const express = require("express")
 const app = express()
+const connection = require("./database/database") // Conexão com o banco MySQL
+
+// Database (MySQL)
+
+connection.authenticate().then(() => {
+    console.log("Conexão feita com sucesso")
+})
+.catch((msgErro) => {
+   /* console.log(msgErro)*/
+})
 
 app.set('view engine','ejs') // Configurando o express para utilizar o EJS como view engine
 app.use(express.static('public'))
