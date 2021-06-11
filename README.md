@@ -1,1 +1,1 @@
-# Guia-Perguntas
+Site no formato do yahoo respostas.
